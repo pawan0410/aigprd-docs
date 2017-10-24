@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Job Description</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <script src="/static/js/signature.js"></script>
+    <script src="/static/js/location.js"></script>
+    <style>
+        body{
+            line-height: 1.5em;
+            width: 96%;
+            margin: 0 auto;
+        }
+        .signature_area table{
+            height:120px;
+        }
+        p{
+            text-align:justify;
+        }
+        .footer_button{
+            margin: 20px;
+            padding: 10px;
+            border-top: 1px solid;
+        }
+    </style>
+
+
+  <style>
+
+
+
+
+
+
+        body{
+            line-height: 1.5em;
+            width: 96%;
+            margin: 0 auto;
+        }
+        .signature_area table{
+            height:120px;
+        }
+        p{
+            text-align:justify;
+        }
+
+
+
+		.main-wrap{
+			width: 1000px;
+			margin: 0 auto;
+			background-color: #f7fafc;
+			padding: 10px;
+			border: solid 1px #dbeaf2;
+		}
+		h1{
+
+			font-size: 25px;
+			color: #0d374c;
+			text-align: center;
+			background-color: #dbeaf2;
+			border-radius:4px;
+			padding:10px 7px;
+			margin: 0px;
+			;
+		}
+
+		h2{
+
+			font-size: 20px;
+			color: #0e5478;
+			background: #EAF0F3;
+			border: solid 1px #D7E4EC;
+			padding:10px 7px;
+			margin: 0px;
+			text-align: left;
+		}
+
+		p{
+			  font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		   font-size: 13px;
+			line-height: 22px;
+
+		}
+		li{
+			  font-family:"Georgia",  Arial, "sans-serif"
+			line-height: 22px;
+			color: #0e5478;
+		}
+
+		input[type='text']
+			{
+			border: solid 1px #aed3e6;
+				padding: 4px;
+		}
+
+
+		.signature_area{
+			background-color: #dbeaf2;
+			padding: 10px;
+			border-radius:6px;
+
+		}
+
+		.box-bg{
+				background-color: #dbeaf2;
+			padding: 10px;
+			border-radius:6px;
+			width: 100%;
+
+		}
+
+		.button {
+		background-color: #08a6f8;
+		border-radius:6px;
+		border: none;
+		color: white;
+		padding: 5px 25px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+
+		cursor: pointer;
+		float: right;
+}
+
+
+	  table{
+
+		  border-collapse: collapse;
+
+	  }
+
+	  tr th{
+
+		  background: #F3F3F3;
+		  border: solid 1px #B3B0B0;
+		 color: #4E4D4D;
+		  width: 100%;
+		  border-collapse: collapse;
+			font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		   font-size: 13px;
+		   line-height: 1.4;
+		  text-align: left;
+
+	  }
+
+	  tr th small{
+
+		  font-size: 12px;
+		  text-align: left;
+	  }
+
+	  td{
+
+		   border: solid 1px #E5E8E9;
+		    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		   font-size: 14px;
+		   line-height: 1.4;
+		  text-align: left;
+
+
+	  }
+
+	  .footer_buttom{
+
+		  background: #EAF0F3;
+
+		  padding: 10px;
+	  }
+
+
+    </style>
+
+
+
+</head>
+<body onload="getLocation()">
+<div class="main-wrap" >
+<form method="post" action="/employee" id="frm">
+    <input type="hidden" id="location" name="location">
+    <input type="hidden" id="signature" name="signature">
+
+    <h2>Employee Information</h2>
+
+
+    <div class="employee">
+    <table width="100%" cellspacing="3" cellpadding="3">
+        <thead>
+        </thead>
+        <tbody>
+        <tr>
+         <td>Employee Name :</td>
+            <td>
+                <input type="text" name="emp_name" id="emp_name">
+            </td>
+
+            <td>Outstanding</td>
+            <td>91-100</td>
+            <td>S</td>
+
+        </tr>
+
+        <tr>
+         <td>Employee Email :</td>
+            <td>
+                <input type="text" name="emp_email" id="emp_email">
+            </td>
+
+            <td>Exceeds Expectations</td>
+            <td>81-90</td>
+            <td>M</td>
+        </tr>
+
+        <tr>
+         <td>Employee Code :</td>
+            <td>
+                <input type="text" name="emp_code" id="emp_code">
+            </td>
+
+            <td>Meets Expectations</td>
+            <td>71-80</td>
+            <td>A</td>
+
+        </tr>
+
+        <tr>
+         <td>Job Function :</td>
+            <td>
+                <input type="text" name="job_function" id="job_function">
+            </td>
+
+             <td> Improvement Needed</td>
+            <td>51-70</td>
+            <td>R</td>
+
+        </tr>
+
+         <tr>
+         <td> Date of Review :</td>
+            <td>
+                <input style="width: 175px;" type="date" name="date" id="date">
+            </td>
+
+              <td> Unacceptable</td>
+            <td>Below 50</td>
+            <td>T</td>
+
+        </tr>
+
+         <tr>
+         <td> Reviewed By :</td>
+            <td>
+                <input type="text" name="reviewer_name" id="reviewer_name">
+            </td>
+        </tr>
+
+        <tr>
+         <td> Reviewer's Employee Code :</td>
+            <td>
+                <input type="text" name="reviewer_code" id="reviewer_code">
+            </td>
+        </tr>
+
+
+        </tbody>
+
+    </table>
+    </div>
+
+   <!-- <div class="standards">
+    <table cellspacing="3" cellpadding="3">
+        <thead>
+        </thead>
+        <tbody>
+        <tr>
+         <td>Outstanding</td>
+            <td>91-100</td>
+        </tr>
+
+        <tr>
+         <td>Exceeds Expectations</td>
+            <td>81-90</td>
+        </tr>
+
+        <tr>
+         <td>Meets Expectations</td>
+            <td>71-80</td>
+        </tr>
+
+         <tr>
+         <td> Improvement Needed</td>
+            <td>51-70</td>
+        </tr>
+
+         <tr>
+         <td> Unacceptable</td>
+            <td>Below 50</td>
+        </tr>
+
+        </tbody>
+
+    </table>
+    </div>-->
+
+    <h2>Quality of Work (Effective)</h2>
+    <div class="work_quality">
+    <table cellspacing="3" cellpadding="3">
+        <thead>
+
+        <tr>
+            <th width="270"><small>Work is performed accurately & neatly.<br>
+ Work is consistent, thorough and complete.</small></th>
+            <th>Self Assessment</th>
+            <th>Manager Assessment</th>
+            <th>Comments</th>
+            <th>Total Score</th>
+            <th>Achieved Score</th>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr>
+
+            <td><textarea rows="2" cols="60" name="self_assessment1_comment1" id="self_assessment1_comment1"
+                       placeholder="Write self-assessment comments"></textarea></td>
+            <td><input type="text" name="self_assessment1" id="self_assessment1"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+
+        </tr>
+
+        </tbody>
+
+    </table>
+    </div>
+
+    <h2>Quantity of Work (Productivity)</h2>
+    <div class="work_quantity">
+    <table cellspacing="3" cellpadding="3">
+        <thead>
+
+        <tr>
+             <th width="270"><small>Amount of work performed on daily basis is appropriate for job function.</small></th>
+            <th>Self Assessment</th>
+            <th>Manager Assessment</th>
+            <th>Comments</th>
+            <th>Total Score</th>
+            <th>Achieved Score</th>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr>
+
+            <td><textarea rows="2" cols="60" name="self_assessment2_comment2" id="self_assessment2_comment2"
+                       placeholder="Write assessment comments"></textarea></td>
+            <td><input type="text" name="self_assessment2" id="self_assessment2"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+
+        </tr>
+
+        </tbody>
+
+    </table>
+    </div>
+
+    <h2>Job Function (Efficiency/Timeliness)</h2>
+    <div class="job_function1">
+    <table cellspacing="3" cellpadding="3">
+        <thead>
+
+        <tr>
+             <th width="270"><small>Understands the job requirement and has specific content knowledge
+                where appropriate, completes work within timelines & is efficient for the work</small></th>
+            <th>Self Assessment</th>
+            <th>Manager Assessment</th>
+            <th>Comments</th>
+            <th>Total Score</th>
+            <th>Achieved Score</th>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr>
+
+            <td><textarea rows="2" cols="60" name="self_assessment3_comment3" id="self_assessment3_comment3"
+                       placeholder="Write assessment comments"></textarea> </td>
+            <td><input type="text" name="self_assessment3" id="self_assessment3"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+
+        </tr>
+
+        </tbody>
+
+    </table>
+    </div>
+
+
+    <h2>Attendance & Punctuality</h2>
+    <div class="attendance">
+    <table cellspacing="3" cellpadding="3">
+        <thead>
+
+        <tr>
+             <th width="270"><small>Is punctual and do not take uninformed leaves</small></th>
+            <th>Self Assessment</th>
+            <th>Manager Assessment</th>
+            <th>Comments</th>
+            <th>Total Score</th>
+            <th>Achieved Score</th>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr>
+
+            <td><textarea rows="2" cols="60" name="self_assessment4_comment4" id="self_assessment4_comment4"
+                       placeholder="Write assessment comments"></textarea> </td>
+            <td><input type="text" name="self_assessment4" id="self_assessment4"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+
+        </tr>
+
+        </tbody>
+
+    </table>
+    </div>
+
+    <h2>Behaviour</h2>
+    <div class="behaviour">
+    <table cellspacing="3" cellpadding="3">
+        <thead>
+
+        <tr>
+             <th width="270"><small>Behaviour with colleagues, Subordinates, Supervisor</small></th>
+            <th>Self Assessment</th>
+            <th>Manager Assessment</th>
+            <th>Comments</th>
+            <th>Total Score</th>
+            <th>Achieved Score</th>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr>
+
+            <td><textarea rows="2" cols="60" name="self_assessment5_comment5" id="self_assessment5_comment5"
+                       placeholder="Write assessment comments"></textarea></td>
+            <td><input type="text" name="self_assessment5" id="self_assessment5"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+
+        </tr>
+
+        </tbody>
+
+    </table>
+    </div>
+
+    <h2>Initiatives</h2>
+    <div class="initiatives">
+    <table cellspacing="3" cellpadding="3">
+        <thead>
+
+        <tr>
+             <th width="270"><small>Is employee always keen on taking intitiatives  to follow
+                the mission and values of the company.</small></th>
+            <th>Self Assessment</th>
+            <th>Manager Assessment</th>
+            <th>Comments</th>
+            <th>Total Score</th>
+            <th>Achieved Score</th>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr>
+
+            <td><textarea rows="2" cols="60" name="self_assessment6_comment6" id="self_assessment6_comment6"
+                       placeholder="Write assessment comments"></textarea></td>
+            <td><input type="text" name="self_assessment6" id="self_assessment6"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+
+        </tr>
+
+        </tbody>
+
+    </table>
+    </div>
+
+
+<div class="footer_buttom">
+    <table cellspacing="3" cellpadding="3">
+
+        <tr style="border: none;">
+            <td style="border: none;">Send form to :</td>
+            <td style="border: none;"><input type="text" name="rev_email" id="rev_email" placeholder="Enter Email Id"> </td>
+            <td style="border: none;" width="480"></td>
+
+            <td style="border: none;"><button class="button" type="submit" id="submit">Submit</button></div></td>
+        </tr>
+
+    </table>
+
+
+</form>
+</div>
+<script>
+        function showPosition(position) {
+            //x.innerHTML = "Latitude: " + position.coords.latitude +
+            //"<br>Longitude: " + position.coords.longitude;
+
+
+             var xhttp = new XMLHttpRequest();
+             xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                 response = JSON.parse(this.responseText);
+                 document.getElementById('location').value = response.results[0].formatted_address;
+                }
+              };
+              xhttp.open("GET", 'http://maps.googleapis.com/maps/api/geocode/json?latlng='+position.coords.latitude+', '+position.coords.longitude+'+&sensor=true', true);
+              xhttp.send();
+
+
+         }
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+        function save(){
+
+			var date = document.querySelector('[name=date]').value;
+            job_function = document.querySelector('[name=job_function]').value;
+			var emp_email = document.querySelector('[name=emp_email]').value;
+			var reviewer_email = document.querySelector('[name=reviewer_email]').value;
+
+			var emp_name = document.querySelector('[name=emp_name]').value;
+			var emp_code = document.querySelector('[name=emp_code]').value;
+			var reviewer_code = document.querySelector('[name=reviewer_code]').value;
+			var reviewer_name = document.querySelector('[name=reviewer_name]').value;
+
+
+			var self_assessment1 = document.querySelector('[name=self_assessment1]').value;
+			var self_assessment1_comment1 = document.querySelector('[name=self_assessment1_comment1]').value;
+
+			var self_assessment2 = document.querySelector('[name=self_assessment2]').value;
+			var self_assessment2_comment2 = document.querySelector('[name=self_assessment2_comment2]').value;
+
+			var self_assessment3 = document.querySelector('[name=self_assessment3]').value;
+			var self_assessment3_comment3 = document.querySelector('[name=self_assessment3_comment3]').value;
+
+			var self_assessment4 = document.querySelector('[name=self_assessment4]').value;
+			var self_assessment4_comment4 = document.querySelector('[name=self_assessment4_comment4]').value;
+
+			var self_assessment5 = document.querySelector('[name=self_assessment5]').value;
+			var self_assessment5_comment5 = document.querySelector('[name=self_assessment5_comment5]').value;
+
+			var self_assessment6 = document.querySelector('[name=self_assessment6]').value;
+			var self_assessment6_comment6 = document.querySelector('[name=self_assessment6_comment6]').value;
+
+			document.getElementById('signature').value = signature;
+
+
+			if ( (date == '') ||
+			  (job_function == '') || (emp_email == '')||(reviewer_email == '') ||(emp_code == '') ||(reviewer_code == '')
+			 || (emp_name == '') || (reviewer_name == '') || (self_assessment1 == '') || (self_assessment2 == '') || (self_assessment3 == '')
+			 || (self_assessment4 == '') || (self_assessment5 == '') || (self_assessment6 == '') || (self_assessment1_comment1 == '')
+			 || (self_assessment2_comment2 == '')
+			 || (self_assessment3_comment3 == '') || (self_assessment4_comment4 == '') || (self_assessment5_comment5 == '')
+			 || (self_assessment6_comment6 == '')){
+			    alert('All fields are mandatory!!');
+			    return false;
+			}
+
+
+			return true;
+
+
+        }
+        function dosubmit(e){
+             if( confirm('By Submitting this form you agree that the information shared by you is correct and up-to-date ? ') ){
+                save();
+             }
+
+             return false;
+        }
+       document.getElementById('frm').addEventListener('submit', dosubmit);
+    </script>
+</body>
+</html>

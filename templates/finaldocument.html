@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Job Description</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <script src="/static/js/signature.js"></script>
+    <script src="/static/js/location.js"></script>
+    <style>
+        body{
+            line-height: 1.5em;
+            width: 96%;
+            margin: 0 auto;
+        }
+        .signature_area table{
+            height:120px;
+        }
+        p{
+            text-align:justify;
+        }
+        .footer_button{
+            margin: 20px;
+            padding: 10px;
+            border-top: 1px solid;
+        }
+    </style>
+
+
+     <style>
+
+
+        body{
+            line-height: 1.5em;
+            width: 96%;
+            margin: 0 auto;
+        }
+        .signature_area table{
+            height:120px;
+        }
+        p{
+            text-align:justify;
+        }
+
+
+
+		.main-wrap{
+			width: 1000px;
+			margin: 0 auto;
+			background-color: #f7fafc;
+			padding: 10px;
+			border: solid 1px #dbeaf2;
+		}
+		h1{
+
+			font-size: 25px;
+			color: #0d374c;
+			text-align: center;
+			background-color: #dbeaf2;
+			border-radius:4px;
+			padding:10px 7px;
+			margin: 0px;
+			;
+		}
+
+		h2{
+
+			font-size: 20px;
+			color: #0e5478;
+			background: #EAF0F3;
+			border: solid 1px #D7E4EC;
+			padding:10px 7px;
+			margin: 0px;
+			text-align: left;
+		}
+
+		p{
+			  font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		   font-size: 13px;
+			line-height: 22px;
+
+		}
+		li{
+			  font-family:"Georgia",  Arial, "sans-serif"
+			line-height: 22px;
+			color: #0e5478;
+		}
+
+		input[type='text']
+			{
+			border: solid 1px #aed3e6;
+				padding: 4px;
+		}
+
+
+		.signature_area{
+
+			padding: 10px;
+			border-radius:6px;
+
+		}
+
+		.box-bg{
+				background-color: #dbeaf2;
+			padding: 10px;
+			border-radius:6px;
+			width: 100%;
+
+		}
+
+		.button {
+		background-color: #08a6f8;
+		border-radius:6px;
+		border: none;
+		color: white;
+		padding: 5px 25px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+
+		cursor: pointer;
+		float: right;
+}
+
+
+	  table{
+
+		  border-collapse: collapse;
+
+	  }
+
+	  tr th{
+
+		  background: #F3F3F3;
+		  border: solid 1px #B3B0B0;
+		 color: #4E4D4D;
+		  width: 100%;
+		  border-collapse: collapse;
+			font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		   font-size: 13px;
+		   line-height: 1.4;
+		  font: normal;
+		  text-align: left;
+
+	  }
+
+	  tr th small{
+
+		  font-size: 12px;
+		  text-align: left;
+	  }
+
+	  td{
+
+		   border: solid 1px #E5E8E9;
+		    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+		   font-size: 14px;
+		   line-height: 1.4;
+		  text-align: left;
+
+
+	  }
+
+	  .footer_buttom{
+
+		  background: #EAF0F3;
+
+		  padding: 10px;
+	  }
+
+
+		input[type=text] {
+    width: 100px;
+
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+    </style>
+
+
+
+
+
+</head>
+<body onload="getLocation()">
+<div class="main-wrap">
+
+<form method="post" action="/save_final" id="frm2">
+    <input type="hidden" id="location" name="location">
+<input type="hidden" name="emp_code1" id="emp_code1" value="{{the_document.emp_code}}" />
+<input type="hidden" name="reviewer_code1" id="reviewer_code1" value="{{the_final_document.reviewer_code1}}" />
+
+    <h2>Employee Information</h2>
+
+
+    <div class="employee">
+    <table width="100%" cellspacing="3" cellpadding="3">
+        <thead>
+        </thead>
+        <tbody>
+        <tr>
+         <td>Employee Name :</td>
+            <td>
+                {{the_document.emp_name}}
+            </td>
+
+             <td>Outstanding</td>
+            <td>91-100</td>
+            <td>S</td>
+
+        </tr>
+
+        <tr>
+         <td>Employee Email :</td>
+            <td>
+                {{the_document.emp_email}}
+            </td>
+             <td>Exceeds Expectations</td>
+            <td>81-90</td>
+            <td>M</td>
+
+        </tr>
+
+        <tr>
+         <td> Enter Employee Code :</td>
+            <td>
+               {{the_document.emp_code}}
+            </td>
+
+            <td>Meets Expectations</td>
+            <td>71-80</td>
+            <td>A</td>
+
+        </tr>
+
+        <tr>
+         <td>Job Function :</td>
+            <td>
+                {{the_document.job_function}}
+            </td>
+             <td> Improvement Needed</td>
+            <td>51-70</td>
+            <td>R</td>
+
+        </tr>
+
+         <tr>
+         <td> Date of Review :</td>
+            <td>
+                {{the_document.date}}
+            </td>
+          <td> Unacceptable</td>
+            <td>Below 50</td>
+            <td>T</td>
+
+        </tr>
+
+         <tr>
+         <td> Reviewed By :</td>
+            <td>
+                {{the_final_document.reviewer_name1}}
+
+            </td>
+        </tr>
+
+        <tr>
+         <td> Reviewer's Employee Code :</td>
+            <td>
+                {{the_final_document.reviewer_code1}}
+
+            </td>
+        </tr>
+
+
+
+
+        </tbody>
+
+    </table>
+    </div>
+
+    <!--<div class="standards">
+    <table cellspacing="3" cellpadding="3">
+        <thead>
+        </thead>
+        <tbody>
+        <tr>
+         <td>Outstanding</td>
+            <td>91-100</td>
+        </tr>
+
+        <tr>
+         <td>Exceeds Expectations</td>
+            <td>81-90</td>
+        </tr>
+
+        <tr>
+         <td>Meets Expectations</td>
+            <td>71-80</td>
+        </tr>
+
+         <tr>
+         <td> Improvement Needed</td>
+            <td>51-70</td>
+        </tr>
+
+         <tr>
+         <td> Unacceptable</td>
+            <td>Below 50</td>
+        </tr>
+
+        </tbody>
+
+    </table>
+    </div>-->
+
+    <h2>Quality of Work (Effective)</h2>
+    <div class="work_quality">
+    <table cellspacing="3" cellpadding="3">
+        <thead>
+
+        <tr>
+            <td style="width: 167px;"><small>Work is performed accurately & neatly. Work is consistent, thorough and complete.</small></td>
+            <td style="width: 167px;">Self Assessment</td>
+            <td style="width: 167px;">Manager Assessment</td>
+            <td style="width: 167px;">Comments</td>
+            <td style="width: 167px;">Total Score</td>
+            <td style="width: 167px;">Achieved Score</td>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr>
+
+            <td style="width: 167px;">{{the_document.self_assessment1_comment1}}</td>
+            <td style="width: 167px;">{{the_document.self_assessment1}}</td>
+            <td style="width: 167px;">{{the_final_document.manager_assessment1}}</td>
+            <td style="width: 167px;">{{the_final_document.manager_assessment1_comment1}}</td>
+            <td style="width: 167px;">{{the_final_document.total_score1}}</td>
+            <td style="width: 167px;">{{the_final_document.achieved_score1}}</td>
+
+
+        </tr>
+
+        </tbody>
+
+    </table>
+    </div>
+
+    <h2>Quantity of Work (Productivity)</h2>
+    <div class="work_quantity">
+    <table cellspacing="3" cellpadding="3">
+        <thead>
+
+        <tr>
+            <td style="width: 167px;"><small>Amount of work performed on daily basis is appropriate for job function.</small></td>
+            <td style="width: 167px;">Self Assessment</td>
+            <td style="width: 167px;">Manager Assessment</td>
+            <td style="width: 167px;">Comments</td>
+            <td style="width: 167px;">Total Score</td>
+            <td style="width: 167px;">Achieved Score</td>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr>
+
+            <td style="width: 167px;">{{the_document.self_assessment2_comment2}}</td>
+            <td style="width: 167px;">{{the_document.self_assessment2}}</td>
+            <td style="width: 167px;">{{the_final_document.manager_assessment2}}</td>
+            <td style="width: 167px;">{{the_final_document.manager_assessment2_comment2}}</td>
+            <td style="width: 167px;">{{the_final_document.total_score2}}</td>
+            <td style="width: 167px;">{{the_final_document.achieved_score2}}</td>
+        </tr>
+
+        </tbody>
+
+    </table>
+    </div>
+
+    <h2>Job Function (Efficiency/Timeliness)</h2>
+    <div class="job_function1">
+    <table cellspacing="3" cellpadding="3">
+        <thead>
+
+        <tr>
+            <td style="width: 167px;"><small>Understands the job requirement and has specific content knowledge
+                where appropriate, completes work within timelines & is efficient for the work</small></td>
+            <td style="width: 167px;">Self Assessment</td>
+            <td style="width: 167px;">Manager Assessment</td>
+            <td style="width: 167px;">Comments</td>
+            <td style="width: 167px;">Total Score</td>
+            <td style="width: 167px;">Achieved Score</td>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr>
+
+            <td style="width: 167px;">{{the_document.self_assessment3_comment3}}</td>
+           	<td style="width: 167px;">{{the_document.self_assessment3}}</td>
+            <td style="width: 167px;">{{the_final_document.manager_assessment3}}</td>
+            <td style="width: 167px;">{{the_final_document.manager_assessment3_comment3}}</td>
+            <td style="width: 167px;">{{the_final_document.total_score3}}</td>
+            <td style="width: 167px;">{{the_final_document.achieved_score3}}</td>
+
+
+
+        </tr>
+
+        </tbody>
+
+    </table>
+    </div>
+
+
+    <h2>Attendance & Punctuality</h2>
+    <div class="attendance">
+    <table cellspacing="3" cellpadding="3">
+        <thead>
+
+        <tr>
+            <td style="width: 167px;"><small>Is punctual and do not take uninformed leaves</small></td>
+            <td style="width: 167px;">Self Assessment</td>
+            <td style="width: 167px;">Manager Assessment</td>
+            <td style="width: 167px;">Comments</td>
+            <td style="width: 167px;">Total Score</td>
+            <td style="width: 167px;">Achieved Score</td>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr>
+
+            <td style="width: 167px;">{{the_document.self_assessment4_comment4}}</td>
+            <td style="width: 167px;">{{the_document.self_assessment4}}</td>
+            <td style="width: 167px;">{{the_final_document.manager_assessment4}}</td>
+            <td style="width: 167px;">{{the_final_document.manager_assessment4_comment4}}</td>
+            <td style="width: 167px;">{{the_final_document.total_score4}}</td>
+            <td style="width: 167px;">{{the_final_document.achieved_score4}}</td>
+
+
+
+        </tr>
+
+        </tbody>
+
+    </table>
+    </div>
+
+    <h2>Behaviour</h2>
+    <div class="behaviour">
+    <table cellspacing="3" cellpadding="3">
+        <thead>
+
+        <tr>
+            <td style="width: 167px;"><small>Behaviour with colleagues, Subordinates, Supervisor</small></td>
+            <td style="width: 167px;">Self Assessment</td>
+            <td style="width: 167px;">Manager Assessment</td>
+            <td style="width: 167px;">Comments</td>
+            <td style="width: 167px;">Total Score</td>
+            <td style="width: 167px;">Achieved Score</td>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr>
+
+            <td style="width: 167px;">{{the_document.self_assessment5_comment5}}</td>
+            <td style="width: 167px;">{{the_document.self_assessment5}}</td>
+            <td style="width: 167px;">{{the_final_document.manager_assessment5}}</td>
+            <td style="width: 167px;">{{the_final_document.manager_assessment5_comment5}}</td>
+            <td style="width: 167px;">{{the_final_document.total_score5}}</td>
+            <td style="width: 167px;">{{the_final_document.achieved_score5}}</td>
+
+
+
+        </tr>
+
+        </tbody>
+
+    </table>
+    </div>
+
+    <h2>Initiatives</h2>
+    <div class="initiatives">
+    <table cellspacing="3" cellpadding="3">
+        <thead>
+
+        <tr>
+            <td style="width: 167px;"><small>Is employee always keen on taking intitiatives  to follow
+                the mission and values of the company.</small></td>
+            <td style="width: 167px;">Self Assessment</td>
+            <td style="width: 167px;">Manager Assessment</td>
+            <td style="width: 167px;">Comments</td>
+            <td style="width: 167px;">Total Score</td>
+            <td style="width: 167px;">Achieved Score</td>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr>
+
+            <td style="width: 167px;">{{the_document.self_assessment6_comment6}}</td>
+            <td style="width: 167px;">{{the_document.self_assessment6}}</td>
+            <td style="width: 167px;">{{the_final_document.manager_assessment6}}</td>
+            <td style="width: 167px;">{{the_final_document.manager_assessment6_comment6}}</td>
+            <td style="width: 167px;">{{the_final_document.total_score6}}</td>
+            <td style="width: 167px;">{{the_final_document.achieved_score6}}</td>
+
+
+
+        </tr>
+
+        </tbody>
+
+    </table>
+    </div>
+
+
+
+    <input type="hidden" id="signature" name="signature">
+    <div class="signature_area">
+    <table cellspacing="3" cellpadding="3">
+
+
+         <tr>
+            <td>Reviewer Signature  :</td>
+            <td style="background:#faebd7;">
+             <img src="{{the_final_document.signaturepath.replace(base_dir, '') }}" style="height:120px;" />
+
+
+        </tr>
+
+
+
+    </table>
+</div>
+
+    <input type="hidden" id="signature1" name="signature1">
+    <div class="signature_area">
+    <table cellspacing="3" cellpadding="3">
+
+
+         <tr>
+            <td>Reviewer Signature  :</td>
+            <td style="background:#faebd7;">
+                <div id="canvas">
+                    Canvas is not supported.
+                </div>
+                <script>
+				signature.capture();
+                </script>
+            </td>
+            <td>
+            <button type="button" onclick="signature.clear()">Clear</button>
+            </td>
+
+
+        </tr>
+    </table>
+</div>
+
+
+
+<div class="footer_buttom">
+    <table cellspacing="3" cellpadding="3">
+        <tbody>
+        <tr>
+            <td>Send form to :</td>
+            <td><input type="text" name="rev_email1" id="rev_email1" placeholder="Enter Email Id"> </td>
+            <td style="border: none;" width="480"></td>
+              <td style="border: none;"><button class="button" type="submit" id="submit">Submit</button></td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+
+
+</form>
+
+
+
+<script>
+        function save(){
+
+            var canvas1 = document.getElementById("newSignature");
+			var signature1 = canvas1.toDataURL("image/png");
+
+			document.getElementById('signature1').value = signature1;
+
+			if ( signature.isEmpty()
+			 ){
+			        alert('Please sign all the fields');
+			       return false;
+			};
+
+
+        }
+        function dosubmit(e){
+             if( confirm('By Submitting this form you agree that the information shared by you is correct and up-to-date ? ') ){
+                save();
+             }
+
+             return false;
+        }
+       document.getElementById('frm2').addEventListener('submit', dosubmit);
+    </script>
+</div>
+</body>
+</html>
