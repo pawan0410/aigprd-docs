@@ -6,6 +6,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <script src="/static/js/signature.js"></script>
     <script src="/static/js/location.js"></script>
+
     <style>
         body{
             line-height: 1.5em;
@@ -509,6 +510,33 @@
     </table>
     </div>
 
+    <h2>Manager's Final Comment</h2>
+    <div class="manager_final_comment">
+    <table cellspacing="3" cellpadding="3">
+        <thead>
+
+        <tr>
+            <th style="width: 320px;">Final Comments</th>
+            <th>Final Rating</th>
+
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr>
+
+
+            <td><input type="text" name="manager_final_comment" id="manager_final_comment"></td>
+
+            <td><input type="text" name="manager_final_rating" id="manager_final_rating"></td>
+
+
+        </tr>
+
+        </tbody>
+
+    </table>
+    </div>
 
 
     <input type="hidden" id="signature" name="signature">
@@ -587,14 +615,12 @@
             achieved_score6 = document.querySelector('[name=achieved_score6]').value;
 
             rev_email1 = document.querySelector('[name=rev_email1]').value;
-	      var canvas = document.getElementById("newSignature");
+	        var canvas = document.getElementById("newSignature");
 			var signature = canvas.toDataURL("image/png");
-document.getElementById('signature').value = signature;
+            document.getElementById('signature').value = signature;
 
-
-
-
-
+            manager_final_comment = document.getElementById("manager_final_comment");
+            manager_final_rating = document.getElementById("manager_final_rating");
 
 
 			if ( (emp_code1 == '') ||
@@ -607,14 +633,12 @@ document.getElementById('signature').value = signature;
 			 || (total_score1 == '') || (total_score2 == '') || (total_score3 == '')
 			 || (total_score4 == '') || (total_score5 == '') || (total_score6 == '') || (achieved_score1 == '') || (achieved_score2 == '')
 			 || (achieved_score3 == '') || (achieved_score4 == '') || (achieved_score5 == '') || (achieved_score6 == '')
-			 || (rev_email1 == '')){
+			 || (rev_email1 == '') ||(manager_final_comment == '') || (manager_final_rating == '')){
 			    alert('All fields are mandatory!!');
 			    return false;
 			}
 
-
 			return true;
-
 
         }
         function dosubmit(e){
@@ -626,5 +650,6 @@ document.getElementById('signature').value = signature;
         }
        document.getElementById('frm').addEventListener('submit', dosubmit);
     </script>
+</div>
 </body>
 </html>

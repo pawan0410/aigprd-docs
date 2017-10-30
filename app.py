@@ -13,6 +13,7 @@ import os
 from models import Employee, Manager
 
 
+
 app = Flask(__name__)
 app.config.from_object(config)
 
@@ -150,6 +151,9 @@ def save_managerdata():
     total_score6 = request.form.get('total_score6')
     achieved_score6 = request.form.get('achieved_score6')
 
+    manager_final_comment = request.form.get('manager_final_comment')
+    manager_final_rating = request.form.get('manager_final_rating')
+
     rev_email1 = request.form.get('rev_email1')
 
     signature = utils.save_signature(request.form.get('signature'), 'reviewer_name1', 'signature')
@@ -188,6 +192,9 @@ def save_managerdata():
         manager_assessment6_comment6=manager_assessment6_comment6,
         total_score6=total_score6,
         achieved_score6=achieved_score6,
+
+        manager_final_comment=manager_final_comment,
+        manager_final_rating=manager_final_rating,
 
         signaturepath=signature,
 
@@ -305,6 +312,10 @@ def save_finaldata():
         manager_assessment6_comment6=the_document.manager_assessment6_comment6,
         total_score6=the_document.total_score6,
         achieved_score6=the_document.achieved_score6,
+
+        manager_final_comment=the_document.manager_final_comment,
+        manager_final_rating=the_document.manager_final_rating,
+
 
         signature1=the_empdocument.signaturepath1,
         signature=the_document.signaturepath,

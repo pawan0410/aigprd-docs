@@ -5,9 +5,9 @@ SQLALCHEMY_POOL_SIZE = 5
 SQLALCHEMY_POOL_TIMEOUT = 120
 SQLALCHEMY_POOL_RECYCLE = 280
 
-MAIL_SERVER = 'smtp.gmail.com'
-MAIL_PORT = 465
-MAIL_USERNAME = r'kmt.aigbusiness@gmail.com'
-MAIL_PASSWORD = r'atul123@#'
-MAIL_USE_TLS = False
-MAIL_USE_SSL = True
+MAIL_SERVER = 'smtp.office365.com'
+MAIL_PORT = 587
+MAIL_USERNAME = r'pkaur@aigbusiness.com'
+MAIL_PASSWORD = r'#Pawan1#'
+MAIL_USE_TLS = True
+MAIL_USE_SSL = False

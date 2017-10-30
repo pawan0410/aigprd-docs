@@ -6,6 +6,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <script src="/static/js/signature.js"></script>
     <script src="/static/js/location.js"></script>
+    <script>Signature.ObjID='canvas1'</script>
     <style>
         body{
             line-height: 1.5em;
@@ -483,32 +484,23 @@
     </table>
     </div>
 
-    <h2>Initiatives</h2>
-    <div class="initiatives">
+    <h2>Manager's Final Comment</h2>
+    <div class="manager_final_comment">
     <table cellspacing="3" cellpadding="3">
         <thead>
 
         <tr>
-            <td style="width: 167px;"><small>Is employee always keen on taking intitiatives  to follow
-                the mission and values of the company.</small></td>
-            <td style="width: 167px;">Self Assessment</td>
-            <td style="width: 167px;">Manager Assessment</td>
-            <td style="width: 167px;">Comments</td>
-            <td style="width: 167px;">Total Score</td>
-            <td style="width: 167px;">Achieved Score</td>
+            <th style="width: 320px;">Final Comments</th>
+            <th>Final Rating</th>
+
         </tr>
 
         </thead>
         <tbody>
         <tr>
 
-            <td style="width: 167px;">{{the_document.self_assessment6_comment6}}</td>
-            <td style="width: 167px;">{{the_document.self_assessment6}}</td>
-            <td style="width: 167px;">{{the_final_document.manager_assessment6}}</td>
-            <td style="width: 167px;">{{the_final_document.manager_assessment6_comment6}}</td>
-            <td style="width: 167px;">{{the_final_document.total_score6}}</td>
-            <td style="width: 167px;">{{the_final_document.achieved_score6}}</td>
-
+            <td style="width: 167px;">{{the_final_document.manager_final_comment}}</td>
+            <td style="width: 167px;">{{the_final_document.manager_final_rating}}</td>
 
 
         </tr>
@@ -568,9 +560,9 @@
     <table cellspacing="3" cellpadding="3">
         <tbody>
         <tr>
-            <td>Send form to :</td>
-            <td><input type="text" name="rev_email1" id="rev_email1" placeholder="Enter Email Id"> </td>
-            <td style="border: none;" width="480"></td>
+            <!--<td>Send form to :</td>-->
+            <!--<td><input type="text" name="rev_email1" id="rev_email1" placeholder="Enter Email Id"> </td>-->
+            <!--<td style="border: none;" width="480"></td>-->
               <td style="border: none;"><button class="button" type="submit" id="submit">Submit</button></td>
         </tr>
         </tbody>

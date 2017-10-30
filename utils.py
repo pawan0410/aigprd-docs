@@ -15,16 +15,14 @@ from flask import request
 
 UPLOAD_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'uploads')
 
-
 def save_signature(base64_str, name_3_emp_name, frm_name):
     path = os.path.join(UPLOAD_DIR, name_3_emp_name)
-    file_name = '{}_{}_{}.png'.format(path, frm_name, time.time())
+    file_name = '{}_{}.png'.format(path, frm_name, time.time())
     image = base64.b64decode(base64_str.split(',')[1])
     with open(file_name, 'wb') as f:
         f.write(image)
         f.close()
     return file_name
-
 
 def send_link_as_mail(**kwargs):
     subject = 'PRD Form - {}'.format(kwargs['emp_name'])
@@ -62,20 +60,7 @@ def save_document_as_docx(**kwargs):
     document.add_heading('PRD FORM')
     document.add_paragraph('Employee Information')
 
-    # paragraph = document.add_paragraph("""Employee Name : %s Employee Code : %s Date :	%s.""" % (kwargs['emp_name'],kwargs['emp_code'], kwargs['date']))
-    # paragraph_format = paragraph.paragraph_format
-    # paragraph_format.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
-    # paragraph_format.line_spacing = Pt(12)
-    #
-    # paragraph = document.add_paragraph("""Department: %s Period of Review :	%s """ % (kwargs['department'], kwargs['period_of_review']))
-    # paragraph_format = paragraph.paragraph_format
-    # paragraph_format.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
-    # paragraph_format.line_spacing = Pt(12)
-    #
-    # paragraph = document.add_paragraph("""Reviewer:	%s	Reviewers Title: %s """ %(kwargs['reviewer'],kwargs['reviewers_title']))
-    # paragraph_format = paragraph.paragraph_format
-    # paragraph_format.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
-    # paragraph_format.line_spacing = Pt(12)
+   
 
     table = document.add_table(rows=1, cols=5)
     hdr_cells = table.rows[0].cells
@@ -247,6 +232,16 @@ def save_document_as_docx(**kwargs):
     row_cells[4].text = kwargs['total_score6']
     row_cells[5].text = kwargs['achieved_score6']
 
+    table = document.add_table(rows=1, cols=2)
+    hdr_cells = table.rows[0].cells
+    hdr_cells[0].text = 'Final Manager Comments'
+    hdr_cells[1].text = 'Final Manager Rating'
+
+    row_cells = table.add_row().cells
+    row_cells[0].text = kwargs['manager_final_comment']
+    row_cells[1].text = kwargs['manager_final_rating']
+
+
     document.add_paragraph("""Reviewer's Signature : """)
     document.add_picture(kwargs['signature'], height=Inches(2.0))
 
@@ -263,7 +258,7 @@ def save_document_as_docx(**kwargs):
 def send_document_as_mail(**kwargs):
     subject = 'PRD Form - {}'.format(kwargs['emp_name'])
 
-    msg = Message(subject, sender='aigbusiness@aigbusiness.com', recipients=[
+    msg = Message(subject, sender='pkaur@aigbusiness.com', recipients=[
         'pkaur@aigbusiness.com'
     ])
 
@@ -277,5 +272,3 @@ def send_document_as_mail(**kwargs):
             content_type='application/vnd.openxmlformats-officedocument.wordprocessingml.document'
         )
     mail.send(msg)
-
-

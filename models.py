@@ -1,6 +1,5 @@
 from extensions import db
 
-
 class Employee(db.Model):
     __tablename__ = 'employee_form'
 
@@ -70,6 +69,9 @@ class Manager(db.Model):
     total_score6 = db.Column(db.String(255))
     achieved_score6 = db.Column(db.String(255))
 
+    manager_final_comment = db.Column(db.String(255))
+    manager_final_rating = db.Column(db.String(255))
+
     rev_email1 = db.Column(db.String(255))
     signaturepath = db.Column(db.String(255))
 
@@ -78,4 +80,3 @@ class Manager(db.Model):
     UserAgent = db.Column(db.String(255))
     OperatingSystem = db.Column(db.String(255))
     Time = db.Column(db.DateTime)
-
