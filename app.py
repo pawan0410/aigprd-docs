@@ -123,33 +123,35 @@ def save_managerdata():
 
     manager_assessment1 = request.form.get('manager_assessment1')
     manager_assessment1_comment1 = request.form.get('manager_assessment1_comment1')
-    total_score1 = request.form.get('total_score1')
+
     achieved_score1 = request.form.get('achieved_score1')
 
     manager_assessment2 = request.form.get('manager_assessment2')
     manager_assessment2_comment2 = request.form.get('manager_assessment2_comment2')
-    total_score2 = request.form.get('total_score2')
+
     achieved_score2 = request.form.get('achieved_score2')
 
     manager_assessment3 = request.form.get('manager_assessment3')
     manager_assessment3_comment3 = request.form.get('manager_assessment3_comment3')
-    total_score3 = request.form.get('total_score3')
+
     achieved_score3 = request.form.get('achieved_score3')
 
     manager_assessment4 = request.form.get('manager_assessment4')
     manager_assessment4_comment4 = request.form.get('manager_assessment4_comment4')
-    total_score4 = request.form.get('total_score4')
+
     achieved_score4 = request.form.get('achieved_score4')
 
     manager_assessment5 = request.form.get('manager_assessment5')
     manager_assessment5_comment5 = request.form.get('manager_assessment5_comment5')
-    total_score5 = request.form.get('total_score5')
+
     achieved_score5 = request.form.get('achieved_score5')
 
     manager_assessment6 = request.form.get('manager_assessment6')
     manager_assessment6_comment6 = request.form.get('manager_assessment6_comment6')
-    total_score6 = request.form.get('total_score6')
+
     achieved_score6 = request.form.get('achieved_score6')
+
+    total_achieved_score = request.form.get('total_achieved_score')
 
     manager_final_comment = request.form.get('manager_final_comment')
     manager_final_rating = request.form.get('manager_final_rating')
@@ -165,33 +167,35 @@ def save_managerdata():
         reviewer_code1=reviewer_code1,
         manager_assessment1=manager_assessment1,
         manager_assessment1_comment1=manager_assessment1_comment1,
-        total_score1=total_score1,
+
         achieved_score1=achieved_score1,
 
         manager_assessment2=manager_assessment2,
         manager_assessment2_comment2=manager_assessment2_comment2,
-        total_score2=total_score2,
+
         achieved_score2=achieved_score2,
 
         manager_assessment3=manager_assessment3,
         manager_assessment3_comment3=manager_assessment3_comment3,
-        total_score3=total_score3,
+
         achieved_score3=achieved_score3,
 
         manager_assessment4=manager_assessment4,
         manager_assessment4_comment4=manager_assessment4_comment4,
-        total_score4=total_score4,
+
         achieved_score4=achieved_score4,
 
         manager_assessment5=manager_assessment5,
         manager_assessment5_comment5=manager_assessment5_comment5,
-        total_score5=total_score5,
+
         achieved_score5=achieved_score5,
 
         manager_assessment6=manager_assessment6,
         manager_assessment6_comment6=manager_assessment6_comment6,
-        total_score6=total_score6,
+
         achieved_score6=achieved_score6,
+
+        total_achieved_score=total_achieved_score,
 
         manager_final_comment=manager_final_comment,
         manager_final_rating=manager_final_rating,
@@ -275,43 +279,45 @@ def save_finaldata():
         self_assessment1=the_empdocument.self_assessment1,
         manager_assessment1=the_document.manager_assessment1,
         manager_assessment1_comment1=the_document.manager_assessment1_comment1,
-        total_score1=the_document.total_score1,
+
         achieved_score1=the_document.achieved_score1,
 
         self_assessment2_comment2=the_empdocument.self_assessment2_comment2,
         self_assessment2=the_empdocument.self_assessment2,
         manager_assessment2=the_document.manager_assessment2,
         manager_assessment2_comment2=the_document.manager_assessment2_comment2,
-        total_score2=the_document.total_score2,
+
         achieved_score2=the_document.achieved_score2,
 
         self_assessment3_comment3=the_empdocument.self_assessment3_comment3,
         self_assessment3=the_empdocument.self_assessment3,
         manager_assessment3=the_document.manager_assessment3,
         manager_assessment3_comment3=the_document.manager_assessment3_comment3,
-        total_score3=the_document.total_score3,
+
         achieved_score3=the_document.achieved_score3,
 
         self_assessment4_comment4=the_empdocument.self_assessment4_comment4,
         self_assessment4=the_empdocument.self_assessment4,
         manager_assessment4=the_document.manager_assessment4,
         manager_assessment4_comment4=the_document.manager_assessment4_comment4,
-        total_score4=the_document.total_score4,
+
         achieved_score4=the_document.achieved_score4,
 
         self_assessment5_comment5=the_empdocument.self_assessment5_comment5,
         self_assessment5=the_empdocument.self_assessment5,
         manager_assessment5=the_document.manager_assessment5,
         manager_assessment5_comment5=the_document.manager_assessment5_comment5,
-        total_score5=the_document.total_score5,
+
         achieved_score5=the_document.achieved_score5,
 
         self_assessment6_comment6=the_empdocument.self_assessment6_comment6,
         self_assessment6=the_empdocument.self_assessment6,
         manager_assessment6=the_document.manager_assessment6,
         manager_assessment6_comment6=the_document.manager_assessment6_comment6,
-        total_score6=the_document.total_score6,
+
         achieved_score6=the_document.achieved_score6,
+
+        total_achieved_score=the_document.total_achieved_score,
 
         manager_final_comment=the_document.manager_final_comment,
         manager_final_rating=the_document.manager_final_rating,

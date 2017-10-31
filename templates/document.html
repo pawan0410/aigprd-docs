@@ -240,6 +240,9 @@
             <td>
                 {{the_document.date}}
             </td>
+             <td> Unacceptable</td>
+            <td>Below 50</td>
+            <td>T</td>
         </tr>
 
          <tr>
@@ -248,9 +251,7 @@
                 <input style="width: 200px;" name="reviewer_name1" id="reviewer_name1">
             </td>
 
-             <td> Unacceptable</td>
-            <td>Below 50</td>
-            <td>T</td>
+
         </tr>
 
         <tr>
@@ -326,7 +327,7 @@
             <td><input type="text" name="manager_assessment1" id="manager_assessment1"></td>
             <td><textarea rows="2" cols="60" name="manager_assessment1_comment1" id="manager_assessment1_comment1"
                        placeholder="write comments"></textarea></td>
-            <td><input type="text" name="total_score1" id="total_score1"></td>
+            <td>20</td>
             <td><input type="text" name="achieved_score1" id="achieved_score1"></td>
 
 
@@ -360,7 +361,7 @@
             <td><input type="text" name="manager_assessment2" id="manager_assessment2"></td>
             <td><textarea rows="2" cols="60" name="manager_assessment2_comment2" id="manager_assessment2_comment2"
                        placeholder="write comments"></textarea></td>
-            <td><input type="text" name="total_score2" id="total_score2"></td>
+            <td>20</td>
             <td><input type="text" name="achieved_score2" id="achieved_score2"></td>
 
 
@@ -395,7 +396,7 @@
             <td><input type="text" name="manager_assessment3" id="manager_assessment3"></td>
             <td><textarea rows="2" cols="60" name="manager_assessment3_comment3" id="manager_assessment3_comment3"
                        placeholder="write comments"></textarea></td>
-            <td><input type="text" name="total_score3" id="total_score3"></td>
+            <td>30</td>
             <td><input type="text" name="achieved_score3" id="achieved_score3"></td>
 
 
@@ -430,7 +431,7 @@
             <td><input type="text" name="manager_assessment4" id="manager_assessment4"></td>
             <td><textarea rows="2" cols="60" name="manager_assessment4_comment4" id="manager_assessment4_comment4"
                        placeholder="write comments"></textarea></td>
-            <td><input type="text" name="total_score4" id="total_score4"></td>
+            <td>10</td>
             <td><input type="text" name="achieved_score4" id="achieved_score4"></td>
 
 
@@ -464,7 +465,7 @@
             <td><input type="text" name="manager_assessment5" id="manager_assessment5"></td>
             <td><textarea rows="2" cols="60" name="manager_assessment5_comment5" id="manager_assessment5_comment5"
                        placeholder="write comments"></textarea></td>
-            <td><input type="text" name="total_score5" id="total_score5"></td>
+            <td>10</td>
             <td><input type="text" name="achieved_score5" id="achieved_score5"></td>
 
 
@@ -499,8 +500,20 @@
             <td><input type="text" name="manager_assessment6" id="manager_assessment6"></td>
            <td><textarea rows="2" cols="60" name="manager_assessment6_comment6" id="manager_assessment6_comment6"
                        placeholder="write comments"></textarea></td>
-            <td><input type="text" name="total_score6" id="total_score6"></td>
+            <td>10</td>
             <td><input type="text" name="achieved_score6" id="achieved_score6"></td>
+
+
+        </tr>
+
+        <tr>
+
+            <td></td>
+            <td></td>
+            <td></td>
+           <td></td>
+            <td>100</td>
+            <td><input type="text" name="total_achieved_score" id="total_achieved_score"></td>
 
 
         </tr>
@@ -517,6 +530,7 @@
 
         <tr>
             <th style="width: 320px;">Final Comments</th>
+
             <th>Final Rating</th>
 
         </tr>
@@ -528,7 +542,16 @@
 
             <td><input type="text" name="manager_final_comment" id="manager_final_comment"></td>
 
-            <td><input type="text" name="manager_final_rating" id="manager_final_rating"></td>
+
+            <td>
+                <select name="manager_final_rating" id="manager_final_rating">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="A">A</option>
+                    <option value="R">R</option>
+                    <option value="T">T</option>
+                </select>
+            </td>
 
 
         </tr>

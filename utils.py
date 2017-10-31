@@ -31,7 +31,7 @@ def send_link_as_mail(**kwargs):
         kwargs['rev_email']
     ])
 
-    msg.html = """Please click on the link below to sign your probation status form.<br>
+    msg.html = """Please click on the link below to sign PRD form.<br>
     <a href="http://{0}/document/{1}/{2}">Click here</a>
     """.format(request.host,kwargs['emp_code'],kwargs['reviewer_code'])
 
@@ -45,7 +45,7 @@ def send_manager_link_as_mail(**kwargs):
         kwargs['rev_email1']
     ])
 
-    msg.html = """Please click on the link below to sign your probation status form.<br>
+    msg.html = """Please click on the link below to sign your PRD Form.<br>
     <a href="http://{0}/final_form/{1}/{2}">Click here</a>
     """.format(request.host,kwargs['emp_code1'],kwargs['reviewer_code1'])
 
@@ -128,7 +128,7 @@ def save_document_as_docx(**kwargs):
     row_cells[1].text = kwargs['self_assessment1']
     row_cells[2].text = kwargs['manager_assessment1']
     row_cells[3].text = kwargs['manager_assessment1_comment1']
-    row_cells[4].text = kwargs['total_score1']
+    row_cells[4].text = '20'
     row_cells[5].text = kwargs['achieved_score1']
 
     table = document.add_table(rows=1, cols=6)
@@ -148,7 +148,7 @@ def save_document_as_docx(**kwargs):
     row_cells[1].text = kwargs['self_assessment2']
     row_cells[2].text = kwargs['manager_assessment2']
     row_cells[3].text = kwargs['manager_assessment2_comment2']
-    row_cells[4].text = kwargs['total_score2']
+    row_cells[4].text = '20'
     row_cells[5].text = kwargs['achieved_score2']
 
     table = document.add_table(rows=1, cols=6)
@@ -169,7 +169,7 @@ def save_document_as_docx(**kwargs):
     row_cells[1].text = kwargs['self_assessment3']
     row_cells[2].text = kwargs['manager_assessment3']
     row_cells[3].text = kwargs['manager_assessment3_comment3']
-    row_cells[4].text = kwargs['total_score3']
+    row_cells[4].text = '30'
     row_cells[5].text = kwargs['achieved_score3']
 
     table = document.add_table(rows=1, cols=6)
@@ -189,7 +189,7 @@ def save_document_as_docx(**kwargs):
     row_cells[1].text = kwargs['self_assessment4']
     row_cells[2].text = kwargs['manager_assessment4']
     row_cells[3].text = kwargs['manager_assessment4_comment4']
-    row_cells[4].text = kwargs['total_score4']
+    row_cells[4].text = '10'
     row_cells[5].text = kwargs['achieved_score4']
 
     table = document.add_table(rows=1, cols=6)
@@ -209,7 +209,7 @@ def save_document_as_docx(**kwargs):
     row_cells[1].text = kwargs['self_assessment5']
     row_cells[2].text = kwargs['manager_assessment5']
     row_cells[3].text = kwargs['manager_assessment5_comment5']
-    row_cells[4].text = kwargs['total_score5']
+    row_cells[4].text = '10'
     row_cells[5].text = kwargs['achieved_score5']
 
     table = document.add_table(rows=1, cols=6)
@@ -229,8 +229,16 @@ def save_document_as_docx(**kwargs):
     row_cells[1].text = kwargs['self_assessment6']
     row_cells[2].text = kwargs['manager_assessment6']
     row_cells[3].text = kwargs['manager_assessment6_comment6']
-    row_cells[4].text = kwargs['total_score6']
+    row_cells[4].text = '10'
     row_cells[5].text = kwargs['achieved_score6']
+
+    row_cells = table.add_row().cells
+    row_cells[0].text = ''
+    row_cells[1].text = ''
+    row_cells[2].text = ''
+    row_cells[3].text = ''
+    row_cells[4].text = '100'
+    row_cells[5].text = kwargs['total_achieved_score']
 
     table = document.add_table(rows=1, cols=2)
     hdr_cells = table.rows[0].cells
